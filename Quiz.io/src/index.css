@@ -1,0 +1,71 @@
+@import 'tailwindcss';
+
+:root{
+  /* Background */
+  --bg-dark : #061E29;
+  --bg-light : #F5F2F2;
+
+  /* color */
+  --text-dark : #061E29;
+  --text-light : #F5F2F2;
+}
+* {
+  box-sizing: border-box;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  
+}
+
+body {
+  background-color: var(--bg-light);
+}
+
+.bgDark{
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+}
+.bglight{
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+
+.btn{
+  padding: 0.2rem 0.8rem;
+  border-radius: 0.2rem;
+  color:var(--text-light);
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all ease linear 2s;
+}
+
+.btn:active{
+  scale: 0.96;
+}
+
+.mode{
+  color: var(--text-light);
+}
+
+.activated{
+  color: rgb(74, 74, 226);
+}
+
+.typeActivate{
+  background-color: red;
+}
+
+.fullPage{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}
+
