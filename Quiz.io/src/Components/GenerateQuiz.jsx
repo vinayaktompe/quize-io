@@ -78,11 +78,11 @@ const GenerateQuiz = ({ type }) => {
           <h2 className="text-2xl font-semibold">
             Create quizzes instantly from any text you enter or paste.
           </h2>
-          <div className="h-[60%] w-full rounded-lg shadow-xs shadow-gray-400">
+          <div className="h-[60%] w-full lg:w-[50%] rounded-2xl shadow-xs shadow-gray-400">
             <textarea
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              className="h-full w-full p-2 border-none outline-none"
+              className="h-full w-full text-xl lg:text-2xl  bg-amber-50/40 rounded-2xl  p-2 border-none outline-none"
               placeholder="Paste in your notes or other content."
             />
           </div>
@@ -94,11 +94,11 @@ const GenerateQuiz = ({ type }) => {
           <h2 className="text-2xl font-semibold">
             Upload a document and generate quizzes instantly.
           </h2>
-          <div className="h-[60%] w-full rounded-lg shadow-xs shadow-gray-400 flex justify-center items-center">
-            <input
+          <div className="h-[60%] w-full lg:w-[50%] rounded-lg bg-amber-50/40 shadow-xs shadow-gray-400 flex justify-center items-center">
+            <input 
               type="file"
               onChange={(e) => setInput(e.target.files[0])}
-              className="w-fit text-xl text-blue-700 cursor-pointer p-2 border-none outline-none"
+              className="w-full text-xl text-blue-700 cursor-pointer p-2 border-none outline-none"
             />
           </div>
         </>
@@ -106,10 +106,10 @@ const GenerateQuiz = ({ type }) => {
 
       {type === "Random" && (
         <>
-          <h2 className="text-2xl font-semibold">
+          <h2 className="text-2xl font-semibold ">
             Generate random quizzes about computer science.
           </h2>
-          <p className="text-gray-600 font-medium">
+          <p className="text-gray-600 font-medium  " >
             Click below to get a random set of CS quizzes instantly.
           </p>
         </>

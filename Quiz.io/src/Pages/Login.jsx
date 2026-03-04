@@ -1,13 +1,19 @@
 import second from '../assets/access.svg'
 import { Link } from 'react-router-dom'
+import bg from "../assets/grident.jpg";
 
 const Login = () => {
   return (
    <div className='h-screen w-full absolute top-0 left-0 bglight  flex justify-center items-center'>
-    
-        <div className=' p-8 flex  gap-10 border rounded-2xl'>
 
-      <form action="" className="flex justify-center flex-col gap-4 w-100">
+       <div
+            className="h-full relative w-full bg-pink-300 flex bg-cover items-center justify-center"
+            style={{ backgroundImage: `url(${bg})` }}
+          >
+    
+        <div className=' p-8 flex  flex-col-reverse lg:flex-row backdrop-blur-sm  gap-10 border border-amber-50 rounded-2xl'>
+
+      <form action="" className="flex justify-center flex-col gap-4 w-70 lg:w-100 ">
 
              <h1 className='text-4xl font-semibold'>Log In</h1>
           
@@ -28,23 +34,32 @@ const Login = () => {
 
            <Link to={'/home'}>         <button
             
-            className=" w-full bg-blue-500 text-white py-2 rounded-lg font-medium hover:bg-blue-600 transition duration-200 "
-          >
+            className=" w-full relative px-6 py-3 rounded-xl 
+bg-linear-to-r from-indigo-500 to-purple-600 
+text-white font-semibold
+overflow-hidden
+transition-all duration-300
+hover:scale-105
+before:absolute before:inset-0 
+before:bg-white/20 before:opacity-0 
+hover:before:opacity-100 
+before:transition-opacity before:duration-300 cursor-pointer" >
           LogIn
           </button></Link>
           
 
  
-          <p className='self-center text-xl'>You Don't Have Account? <Link className='text-blue-500 font-semibold ' to={'/signin'}>SignIn</Link></p>
+          <p className='self-center text-sm lg:text-xl'>You Don't Have Account? <Link className='text-blue-500 font-semibold ' to={'/signin'}>SignIn</Link></p>
 
        
 
 
       </form>
-      <div className='bg-sky-600 p-4 rounded-2xl'>
-  <img src={second} className='h-100' alt="" />
-</div>
+   
+  <img src={second} className='h-60 lg:h-100' alt="" />
+
       </div>
+    </div>
     </div>
   )
 }
