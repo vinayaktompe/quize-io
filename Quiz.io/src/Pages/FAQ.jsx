@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Navbar from "../Components/Navbar";
+import { motion } from "motion/react"
 import Footer from "../Components/Footer";
 
 
@@ -7,42 +8,50 @@ const faqData = [
   {
     id: 1,
     question: "How do I start a quiz?",
-    answer: "Simply select a quiz category from the homepage and click the 'Start Quiz' button to begin."
+    answer: "Simply select a quiz category from the homepage and click the 'Start Quiz' button to begin.",
+     duration : 0.4
   },
   {
     id: 2,
     question: "Is there a time limit for each quiz?",
-    answer: "Yes, each quiz has a specific time limit depending on the difficulty level."
+    answer: "Yes, each quiz has a specific time limit depending on the difficulty level.",
+    duration : 0.6
   },
   {
     id: 3,
     question: "Can I retake a quiz?",
-    answer: "Yes, you can retake quizzes anytime to improve your score and performance."
+    answer: "Yes, you can retake quizzes anytime to improve your score and performance.",
+     duration : 0.8
   },
   {
     id: 4,
     question: "How is my score calculated?",
-    answer: "Your score is calculated based on the number of correct answers and the time taken to complete the quiz."
+    answer: "Your score is calculated based on the number of correct answers and the time taken to complete the quiz.",
+     duration : 1.0
   },
   {
     id: 5,
     question: "Can I see the correct answers after completing the quiz?",
-    answer: "Yes, after submitting the quiz, you can review your answers along with the correct ones."
+    answer: "Yes, after submitting the quiz, you can review your answers along with the correct ones.",
+     duration : 1.2
   },
   {
     id: 6,
     question: "Do I need to create an account to play?",
-    answer: "You can play as a guest, but creating an account allows you to track your progress and ranking."
+    answer: "You can play as a guest, but creating an account allows you to track your progress and ranking.",
+     duration : 1.4
   },
   {
     id: 7,
     question: "How does the leaderboard work?",
-    answer: "The leaderboard ranks users based on their total points and quiz performance."
+    answer: "The leaderboard ranks users based on their total points and quiz performance.",
+     duration : 1.6
   },
   {
     id: 8,
     question: "What happens if I close the quiz midway?",
-    answer: "If you close the quiz before submitting, your progress may not be saved."
+    answer: "If you close the quiz before submitting, your progress may not be saved.",
+     duration : 1.8
   }
 ];
 
@@ -71,13 +80,17 @@ const faqData = [
 
       {faqData.map((item) => (
         
-        <div
+        <motion.div
           key={item.id}
-          className="border text-gray-600   mb-4 shadow-md rounded-2xl"
+        initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.3, duration: `${item.duration}` }}
+
+          className="border text-gray-600  mb-4 shadow-md rounded-2xl "
         >
           <button 
             onClick={() => toggleFAQ(item.id)}
-            className={`w-full text-left p-4 font-semibold flex justify-between items-center  backdrop-blur-sm rounded-2xl ${activeId === item.id ? 'border-0':'border-0'}`}
+            className={`w-full text-left p-4 cursor-pointer  font-semibold flex justify-between items-center  backdrop-blur-sm rounded-2xl ${activeId === item.id ? 'border-0':'border-0'}`}
           >
             <div className={`${activeId === item.id ? 'font-bold text-gray-800 ' :''}`}>
                 {item.question}
@@ -95,7 +108,7 @@ const faqData = [
       {item.answer}
     </div>
            
-        </div>
+        </motion.div>
       ))}     
        </div>
        <Footer/>

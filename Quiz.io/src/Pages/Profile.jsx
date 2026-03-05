@@ -1,4 +1,5 @@
-import bg from "../assets/profile-bg.jpg";
+
+
 
 import trophy1 from "../assets/1.png";
 import trophy2 from "../assets/2.png";
@@ -12,6 +13,9 @@ import trophy9 from "../assets/9.png";
 import trophy10 from "../assets/10.png";
 import trophy11 from "../assets/11.png";
 import { div } from "motion/react-client";
+import { BookCheck, Star, Target, Trophy } from "lucide-react";
+import ProfileCard from "../Components/ProfileCard";
+import HomeBtn from "../Components/HomeBtn";
 
 const Profile = () => {
   const trophies = [
@@ -75,93 +79,88 @@ const Profile = () => {
   const statsData = [
     {
       id: 1,
-      png: "ri-list-check-3",
+      icon: <BookCheck size={"60px"} />,
       title: "Quizzes Taken",
-      value: 78,
-      bg: "bg-blue-200",
-      color: "text-blue-900",
+      value: "78",
+      hoverbg: "hover:bg-blue-600/40",
+      bg:"bg-blue-600",
+      Mobbg:"bg-blue-600/40",
+      border: "border-blue-400",
     },
     {
       id: 2,
-      png: "ri-star-fill",
-      title: "Points",
-      value: 1540,
-      bg: "bg-purple-200",
-      color: "text-purple-900",
+      title: "Point",
+      icon: <Star size={"60px"} />,
+      value: "1540",
+      hoverbg: "hover:bg-purple-600/40",
+      bg:"bg-purple-600",
+      Mobbg:"bg-purple-600/40",
+      border: "border-purple-400",
     },
     {
       id: 3,
-      png: "ri-target-fill",
+      icon: <Target size={"60px"} />,
       title: "Accuracy",
       value: "85%",
-      bg: "bg-green-200",
-      color: "text-green-900",
-      progress: 85,
+      hoverbg: "hover:bg-green-600/40",
+      bg: "bg-green-600",
+      Mobbg:"bg-green-600/40",
+      border: "border-green-400",
+
+
     },
 
     {
       id: 5,
-      png: "ri-trophy-fill",
+      icon: <Trophy size={"60px"}  />,
       title: "Rank",
       value: "#12",
-      bg: "bg-red-200",
-      color: "text-red-900",
+      hoverbg: "hover:bg-red-600/40",
+      bg: "bg-red-600",
+      Mobbg:"bg-red-600/40",
+      border: "border-red-400",
     },
   ];
   return (
-    <div className=" relative flex flex-col lg:flex-row h-screen w-screen gap-8 p-4 bg-linear-to-br from-purple-300 via-pink-300 to-blue-300 z-0">
+    <div className=" relative flex flex-col justify-center  lg:flex-row  p-4 bg-linear-to-br from-purple-300 via-pink-300 to-blue-300 z-0">
+   
       <div className=" absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.2)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.2)_1px,transparent_1px)] bg-size-[40px_40px] -z-10 " />
-      <div
-        className="flex flex-col items-center bg-cover bg-center  rounded-2xl text-white  justify-center gap-5  p-8 "
-        style={{ backgroundImage: `url(${bg})` }}
-      >
-        <h1 className="font-semibold">User Name </h1>
-        <div className="w-50 h-50 bg-emerald-800 rounded-full"></div>
-        <p>@username</p>
-        <p>email</p>
-        <button className="relative px-4 lg:px-6 py-2 lg:py-3 rounded-full 
-bg-linear-to-r from-indigo-500 to-purple-600 
-text-white lg:font-semibold
-overflow-hidden
-transition-all duration-300
-hover:scale-105
-before:absolute before:inset-0 
-before:bg-white/20 before:opacity-0 
-hover:before:opacity-100 
-before:transition-opacity before:duration-300 cursor-pointer drop-shadow-sm drop-shadow-amber-50 
-      ">
-          Edit Profile
-        </button>
-      </div>
-      <div className="flex flex-col items-center gap-10 w-250 p-8">
+       
+       <ProfileCard/>
+          <div className="absolute left-10 top-0">
+           <HomeBtn />
+
+</div>
+      <div className="flex flex-col gap-8  items-center justify-around lg:w-250 p-8">
         <div className="flex flex-wrap  gap-4 justify-center  w-[90%]  ">
           {statsData.map((ele) => {
             return (
               <div
                 key={ele.id}
-                className={`${ele.bg} w-[45%] px-4 py-4 flex items-center justify-center gap-2 rounded border border-${ele.color}`}
+                className={`w-100 lg:min-w-[40%]  px-10 py-6 flex items-center justify-start gap-5 backdrop-blur-[1px]  rounded border ${ele.border} shadow-sm backdrop-blur-sm shadow-gray-200 rounded-lg  cursor-pointer gap-2 hover:scale-105 ${ele.hoverbg} ease-linear duration-500 ${ele.Mobbg} lg:bg-transparent `}
               >
-                <i className={`${ele.png} text-5xl ${ele.color}`}></i>
+                <i className={` text-5xl text-amber-50 p-2 rounded-full  ${ele.bg}  `}>{ele.icon}</i>
                 <div>
-                  <p className="font-semibold">{ele.title}</p>
-                  <p>{ele.value}</p>
+                  <p className="font-semibold text-2xl">{ele.title}</p>
+                  <p className="text-xl">{ele.value}</p>
                 </div>
               </div>
             );
           })}
         </div>
 
-      <div className='flex overflow-x-auto gap-2  h-60 w-[80%]'>
+      <div className='flex  flex-wrap lg:flex-nowrap items-start justify-center  lg:overflow-x-scroll gap-10 lg:gap-4 h-60 w-[87%] overflow-scroll '>
 {
   
    trophies.map((elem)=>{
-    return <div className='flex flex-col h-50  items-center '>
-           <div className="h-[200px] w-[200px] ">
+    return <div className='flex flex-col  w-[40%] lg:w-full  justify-between items-center '>
+       <p className="font-semibold text-xl">{elem.title}</p>
+           <div className="h-[150px] w-[150px] lg:h-[200px] lg:w-[200px]  flex flex-col justify-between items-center ">
             <img src={elem.img} alt="" className="w-full h-full" />
+           
 
-           </div>
-             <p>{elem.title}</p>
-
+          </div>
+             
     </div>
 
    })

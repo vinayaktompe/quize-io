@@ -32,7 +32,7 @@ const Login = () => {
             className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
 
-           <Link to={'/home'}>         <button
+           <Link to={'/'}>         <button
             
             className=" w-full relative px-6 py-3 rounded-xl 
 bg-linear-to-r from-indigo-500 to-purple-600 

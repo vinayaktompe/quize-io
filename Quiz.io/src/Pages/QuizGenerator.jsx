@@ -1,5 +1,6 @@
 import { useState } from "react";
 import GenerateQuiz from "../Components/GenerateQuiz";
+import HomeBtn from "../Components/HomeBtn";
 
 const QuizGenerator = () => {
   const types = ["Prompt", "Text", "Document", "Random"];
@@ -7,6 +8,7 @@ const QuizGenerator = () => {
 
   return (
     <div className="flex flex-col items-center pt-15 gap-10 p-6 ">
+      <HomeBtn/>
       <h2 className="text-4xl text-center font-semibold text-emerald-700">AI Quiz Generator</h2>
       <p className="text-xl text-gray-600 text-center font-semibold mb-4">
         Generate quizzes from prompt, paste your notes, upload a document, or get random quizzes about computer science.

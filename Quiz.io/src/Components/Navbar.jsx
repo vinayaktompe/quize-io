@@ -7,7 +7,7 @@ import { motion } from "motion/react";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="w-full   py-3 h-[10%] px-5 flex justify-between items-center shadow lg:shadow-md shadow-stone-300 fixed top-0 left-0 backdrop-blur-[2.5px] z-1  bg-amber-50/20  lg:bg-transparent">
+    <div className="w-full  bg-amber-100/40  py-3 h-[10%] px-5 flex justify-between items-center shadow lg:shadow-md shadow-stone-300 fixed top-0 left-0 backdrop-blur-[5px] z-1    ">
       <h2 className="text-3xl flex gap-2 items-center font-bold text-emerald-700 cursor-pointer">
         <MessageCircleQuestionMark strokeWidth={3} size={35} color="red" />
         Quiz.io

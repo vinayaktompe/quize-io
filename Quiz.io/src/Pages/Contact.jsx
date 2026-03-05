@@ -5,7 +5,7 @@ import Navbar from "../Components/Navbar";
 const Contact = () => {
   return (
     <div >
-    <div className="flex flex-col  relative justify-center gap-5 items-center lg:h-screen  bg-linear-to-br from-purple-300 via-pink-300 to-blue-300 z-0 pt-25 lg:pt-10  px-5">
+    <div className="flex flex-col   relative justify-center gap-5 items-center lg:h-screen  bg-linear-to-br from-purple-300 via-pink-300 to-blue-300 z-0 pt-30 lg:pt-10  px-5">
       <div className=" absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.2)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.2)_1px,transparent_1px)] bg-size-[40px_40px] -z-10 " />
       <Navbar />
       <h1 className="text-2xl lg:text-3xl font-bold text-emerald-700">
@@ -13,7 +13,7 @@ const Contact = () => {
       </h1>
       
 
-      <div className="flex flex-col-reverse lg:flex-row  items-center gap-5 lg:gap-10">
+      <div className="flex flex-col lg:flex-row  items-center gap-5 lg:gap-10 pb-10">
         <div className="flex  flex-col  items-start justify-center gap-6 p-4 rounded-2xl   lg:w-100">
           <div className=" rounded-2xl flex  ">
         <div className=" flex flex-col gap-4">
@@ -70,6 +70,7 @@ const Contact = () => {
             <input
               type="email"
               id="email"
+              autoComplete="off"
               placeholder="Enter Your Email"
               className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />

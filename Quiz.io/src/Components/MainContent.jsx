@@ -24,7 +24,7 @@ const MainContent = () => {
        <div className=" absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.2)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.2)_1px,transparent_1px)] bg-size-[40px_40px] z-[-10]  " />
       
         <Routes>
-        <Route path="/home" element={<Home/>}/>
+        <Route path="/" element={<Home/>}/>
         <Route path="/generate-quiz" element={<QuizGenerator/>}/>
         <Route path="/quiz" element={<QuizPage/>}/>
         <Route path="/about" element={<About/>}/>
@@ -37,8 +37,8 @@ const MainContent = () => {
          <Route path="/Profile" element={<Profile/>}/>
          <Route path="/AdminPage" element={<AdminPage/>} />
          
-         <Route path="/login" element={<Login/>}/>
-         <Route path='/' element={<Login/>}/>
+       
+         <Route path='/login' element={<Login/>}/>
          <Route path="/result" element={<ResultPage/>} />
       </Routes>
     </div>

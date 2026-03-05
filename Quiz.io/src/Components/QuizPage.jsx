@@ -69,15 +69,15 @@ const navigate = useNavigate();
 
   return (
     <div className="h-full w-full flex justify-center items-center p-10">
-      <div className="w-full max-[70%] rounded p-6 shadow-sm shadow-gray-600 flex flex-col gap-5">
+      <div className="w-full  rounded-2xl p-6 shadow-md shadow-gray-300 backdrop-blur-[2px] flex flex-col flex-wrap gap-15">
         <div className="w-full flex justify-between items-center">
-          <h2 className="font-bold text-2xl text-gray-800">
+          <h2 className="font-bold text-2xl text-gray-900 ">
             Q{currIdx + 1}. {currentQuiz.question}
           </h2>
           <MessageCircleQuestionMark strokeWidth={3} size={30} color="red" />
         </div>
 
-        <div className="flex flex-col gap-3">
+        <div className="flex items-center justify-center flex-wrap gap-5 ">
           {currentQuiz.options.map((opt, i) => (
             <div
               key={i}
@@ -88,7 +88,7 @@ const navigate = useNavigate();
                   [currIdx]:opt
                 }));
               }}
-              className={`shadow-xs shadow-gray-600 text-lg font-semibold text-gray-700 p-3 rounded cursor-pointer ease-linear duration-200 ${selectedOption === opt ? (opt === currentQuiz.answer ? "bg-green-200 text-green-700 font-semibold" : "bg-red-200 text-red-500") : "text-gray-700 hover:bg-gray-200 hover:text-black hover:shadow-sm hover:shadow-gray-900"}`}
+              className={`w-[45%] bg-amber-50/60 shadow-xs shadow-gray-500 text-lg font-semibold text-gray-700 p-3 rounded-2xl cursor-pointer ease-linear duration-200 ${selectedOption === opt ? (opt === currentQuiz.answer ? "bg-green-200 text-green-700 font-semibold" : "bg-red-200 text-red-500") : "text-gray-700 hover:bg-gray-200 hover:text-black hover:shadow-sm hover:shadow-gray-900"}`}
             >
               {opt}
             </div>
@@ -107,15 +107,6 @@ const navigate = useNavigate();
           </button>
 
           <button
-            onClick={() => {
-              setCurrIdx((prev) => prev + 1);
-            }}
-            disabled={currIdx === quizzes.length - 1}
-            className="px-4 py-1 bg-blue-600 text-white rounded cursor-pointer active:scale-95 disabled:opacity-50"
-          >
-            Next
-          </button>
-          <button
   onClick={() => {
     const score = calculateScore();
 
@@ -130,6 +121,17 @@ const navigate = useNavigate();
 >
   Submit
 </button>
+
+          <button
+            onClick={() => {
+              setCurrIdx((prev) => prev + 1);
+            }}
+            disabled={currIdx === quizzes.length - 1}
+            className="px-4 py-1 bg-blue-600 text-white rounded cursor-pointer active:scale-95 disabled:opacity-50"
+          >
+            Next
+          </button>
+          
         </div>
       </div>
     </div>

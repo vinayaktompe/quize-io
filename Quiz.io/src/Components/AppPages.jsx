@@ -6,7 +6,7 @@ const AppPages = () => {
   const pageArr = [
     {
       page: "Home",
-      route: "/home",
+      route: "/",
     },
     {
       page: "About",
@@ -30,7 +30,7 @@ const AppPages = () => {
     },
   ];
   return (
-    <ul className="flex-col lg:flex-row flex items-center gap-5  font-semibold text-xl text-gray-500 backdrop-blur-xl -2">
+    <ul className="flex-col lg:flex-row flex items-center gap-5  font-semibold text-xl text-gray-500  -2">
       {pageArr.map((elem, idx) => {
         let active = false;
         if (elem.route === "/") {
